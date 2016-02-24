@@ -1,10 +1,11 @@
 {
   "name": "bootstrap-starter-project",
   "version": "0.1.0",
-  "description": "A boilerplate starter Bootstrap project utilising Gulp and NPM, for automated build and package management.",
+  "description": "A boilerplate starter Bootstrap project, utilising Gulp for automated build and NPM for package management.",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "live-server web/"
   },
   "author": "George Webb <george@webb.uno>",
   "license": "MIT",

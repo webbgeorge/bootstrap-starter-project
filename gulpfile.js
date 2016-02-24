@@ -5,6 +5,9 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     addsrc = require('gulp-add-src');
 
+/**
+ * Minify and combine JS files, including jQuery and Bootstrap
+ */
 gulp.task('scripts', function() {
     gulp.src([
             'node_modules/jquery/dist/jquery.js',
@@ -16,6 +19,9 @@ gulp.task('scripts', function() {
         .pipe(gulp.dest('web/dist/js'));
 });
 
+/**
+ * Build SASS, combine with Bootstrap CSS and minify
+ */
 gulp.task('sass', function() {
     gulp.src([
             'src/sass/main.scss'
@@ -27,6 +33,9 @@ gulp.task('sass', function() {
         .pipe(gulp.dest('web/dist/css'));
 });
 
+/**
+ * Move bootstrap and project font files into dist
+ */
 gulp.task('fonts', function() {
     gulp.src([
             'node_modules/bootstrap/dist/fonts/*',
@@ -35,10 +44,16 @@ gulp.task('fonts', function() {
         .pipe(gulp.dest('web/dist/fonts'));
 });
 
+/**
+ * The default gulp task
+ */
 gulp.task('default', function() {
     gulp.run('scripts', 'sass', 'fonts');
 });
 
+/**
+ * Watch asset files for changes. First runs default to prevent annoying issues.
+ */
 gulp.task('watch', function() {
     gulp.run('default');
 
